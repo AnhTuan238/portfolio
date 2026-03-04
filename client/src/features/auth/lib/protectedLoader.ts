@@ -16,16 +16,7 @@ export const protectedLoader = async () => {
     });
   } catch (error: unknown) {
     if (error instanceof AxiosError) {
-      if (!error.response) {
-        toast.error("Cannot connect to server. Please check your connection.");
-        return;
-      }
-      if ([400, 401].includes(error.response.status)) {
-        toast.warning("Please login to continue");
-        throw redirect("/login");
-      }
+      throw redirect("/login");
     }
-
-    throw error;
   }
 };
