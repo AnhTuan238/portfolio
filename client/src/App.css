@@ -1,0 +1,265 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-primary: #22c55e;
+  --color-gray-1: #d9e1e4;
+  --color-black-1: #1e1e1e;
+  --color-black-2: #0d1117;
+  --color-gray-2: #616161;
+  --color-gray-3: #999;
+  --color-gray-4: #d9d9d9;
+  --color-gray-5: #e4e0e0;
+  --color-gray-6: #b2b2b2;
+  --color-gray-7: #f2f4f7;
+  --color-gray-8: lab(90.952% 0 -0.0000119209);
+  --color-gray-9: #737373;
+  --color-gray-10: lab(96.52% -0.0000298023 0.0000119209);
+  --color-gray-11: lab(96.52% -0.0000298023 0.0000119209);
+  --color-gray-12: hsl(0 0% 98%);
+
+  --animate-fade: fade 10s linear infinite;
+
+  @keyframes fade {
+    0% {
+      opacity: 0;
+      transform: scale(1.3);
+      z-index: 2;
+    }
+    15% {
+      opacity: 1;
+      z-index: 2;
+    }
+    49% {
+      opacity: 1;
+      z-index: 2;
+    }
+    50% {
+      z-index: 1;
+    }
+    85% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+  }
+}
+
+.custom-shadow {
+  box-shadow:
+    0 2px 4px #0000001a,
+    0 8px 16px #0000001a;
+}
+
+.action-confirm-button {
+  padding-block: 24px;
+  font-size: 1.25rem;
+  border: none;
+  color: var(--color-white);
+  cursor: pointer;
+}
+
+.project-card-button {
+  padding-block: 4px;
+  padding-inline: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/*  */
+#mvArea {
+  position: relative;
+  z-index: 2;
+}
+
+#mvArea:before {
+  content: "";
+  display: inline-block;
+  background: #07b53b;
+  z-index: 100;
+  animation: startBox 5s;
+  transform: unset;
+  transition: none;
+}
+
+#mvArea:after,
+#mvArea:before {
+  text-align: right;
+  position: absolute;
+  left: calc(50% - 360px);
+  top: calc(50% - 80px);
+  opacity: 0;
+  width: 720px;
+  height: 160px;
+}
+
+#mvArea:after {
+  content: "I'M TUAN";
+  color: #fff;
+  font-size: 48px;
+  font-weight: 700;
+  padding: 30px 30px 0 0;
+  line-height: 3.333;
+  box-sizing: border-box;
+  z-index: 101;
+  animation: startTxt 5s;
+}
+
+@keyframes startTxt {
+  0% {
+    opacity: 1;
+  }
+
+  25% {
+    opacity: 1;
+  }
+
+  39% {
+    opacity: 0;
+  }
+
+  to {
+    content: "";
+    opacity: 0;
+    display: none;
+  }
+}
+
+@keyframes startBox {
+  0% {
+    opacity: 1;
+    transform: scaleX(0);
+    transform-origin: left center;
+  }
+
+  7% {
+    transform-origin: left center;
+  }
+
+  8% {
+    transform: scaleX(1);
+    transform-origin: right center;
+  }
+
+  9% {
+    transform: scaleX(0.97);
+  }
+
+  13% {
+    transform: scaleX(1);
+  }
+
+  25% {
+    transform: scaleX(1);
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  35% {
+    opacity: 0;
+  }
+
+  40% {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(0);
+    transform-origin: right center;
+    opacity: 0;
+    display: none;
+  }
+}
+
+.hero {
+  animation: startMv 2.1s;
+  animation-timing-function: ease-in-out;
+  transition: all 0.3s;
+  overflow: hidden;
+}
+
+@keyframes startMv {
+  0% {
+    width: 0;
+    height: 160px;
+    opacity: 0;
+  }
+
+  65% {
+    min-width: 720px;
+    width: 720px;
+    height: 160px;
+    opacity: 0;
+  }
+
+  66% {
+    opacity: 1;
+  }
+
+  72% {
+    width: 720px;
+    height: 160px;
+  }
+
+  to {
+    min-width: 720px;
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
+/* Header animation */
+.header {
+  animation: startHeader 2.5s;
+}
+
+@keyframes startHeader {
+  0% {
+    transform: translateY(-105%);
+  }
+
+  82% {
+    transform: translateY(-105%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+/*  */
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-size: 16px !important;
+  }
+
+  body {
+    text-rendering: optimizeSpeed;
+    overflow: auto;
+  }
+
+  img,
+  svg {
+    display: block;
+    object-fit: cover;
+  }
+}
