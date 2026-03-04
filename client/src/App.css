@@ -22,6 +22,14 @@
 
   --animate-fade: fade 10s linear infinite;
 
+  --animate-box: startBox 5s;
+
+  --animate-text-in-box: startText 5s;
+
+  --animate-hero-container: startContainer 2.1s;
+
+  --animate-header: startHeader 2.5s;
+
   @keyframes fade {
     0% {
       opacity: 0;
@@ -47,6 +55,118 @@
       transform: scale(0.9);
     }
   }
+
+  @keyframes startBox {
+    0% {
+      opacity: 1;
+      transform: scaleX(0);
+      transform-origin: left center;
+    }
+
+    7% {
+      transform-origin: left center;
+    }
+
+    8% {
+      transform: scaleX(1);
+      transform-origin: right center;
+    }
+
+    9% {
+      transform: scaleX(0.97);
+    }
+
+    13% {
+      transform: scaleX(1);
+    }
+
+    25% {
+      transform: scaleX(1);
+    }
+
+    30% {
+      opacity: 1;
+    }
+
+    35% {
+      opacity: 0;
+    }
+
+    40% {
+      transform: scaleX(0);
+    }
+
+    to {
+      transform: scaleX(0);
+      transform-origin: right center;
+      opacity: 0;
+      display: none;
+    }
+  }
+
+  @keyframes startText {
+    0% {
+      opacity: 1;
+    }
+
+    25% {
+      opacity: 1;
+    }
+
+    39% {
+      opacity: 0;
+    }
+
+    to {
+      content: "";
+      opacity: 0;
+      display: none;
+    }
+  }
+
+  @keyframes startContainer {
+    0% {
+      width: 0;
+      height: 160px;
+      opacity: 0;
+    }
+
+    65% {
+      min-width: 720px;
+      width: 720px;
+      height: 160px;
+      opacity: 0;
+    }
+
+    66% {
+      opacity: 1;
+    }
+
+    72% {
+      width: 720px;
+      height: 160px;
+    }
+
+    to {
+      min-width: 720px;
+      width: 100vw;
+      height: 100vh;
+    }
+  }
+
+  @keyframes startHeader {
+    0% {
+      transform: translateY(-105%);
+    }
+
+    82% {
+      transform: translateY(-105%);
+    }
+
+    to {
+      transform: translateY(0);
+    }
+  }
 }
 
 .custom-shadow {
@@ -69,171 +189,6 @@
   border-radius: 6px;
   cursor: pointer;
 }
-
-/*  */
-#mvArea {
-  position: relative;
-  z-index: 2;
-}
-
-#mvArea:before {
-  content: "";
-  display: inline-block;
-  background: #07b53b;
-  z-index: 100;
-  animation: startBox 5s;
-  transform: unset;
-  transition: none;
-}
-
-#mvArea:after,
-#mvArea:before {
-  text-align: right;
-  position: absolute;
-  left: calc(50% - 360px);
-  top: calc(50% - 80px);
-  opacity: 0;
-  width: 720px;
-  height: 160px;
-}
-
-#mvArea:after {
-  content: "I'M TUAN";
-  color: #fff;
-  font-size: 48px;
-  font-weight: 700;
-  padding: 30px 30px 0 0;
-  line-height: 3.333;
-  box-sizing: border-box;
-  z-index: 101;
-  animation: startTxt 5s;
-}
-
-@keyframes startTxt {
-  0% {
-    opacity: 1;
-  }
-
-  25% {
-    opacity: 1;
-  }
-
-  39% {
-    opacity: 0;
-  }
-
-  to {
-    content: "";
-    opacity: 0;
-    display: none;
-  }
-}
-
-@keyframes startBox {
-  0% {
-    opacity: 1;
-    transform: scaleX(0);
-    transform-origin: left center;
-  }
-
-  7% {
-    transform-origin: left center;
-  }
-
-  8% {
-    transform: scaleX(1);
-    transform-origin: right center;
-  }
-
-  9% {
-    transform: scaleX(0.97);
-  }
-
-  13% {
-    transform: scaleX(1);
-  }
-
-  25% {
-    transform: scaleX(1);
-  }
-
-  30% {
-    opacity: 1;
-  }
-
-  35% {
-    opacity: 0;
-  }
-
-  40% {
-    transform: scaleX(0);
-  }
-
-  to {
-    transform: scaleX(0);
-    transform-origin: right center;
-    opacity: 0;
-    display: none;
-  }
-}
-
-.hero {
-  animation: startMv 2.1s;
-  animation-timing-function: ease-in-out;
-  transition: all 0.3s;
-  overflow: hidden;
-}
-
-@keyframes startMv {
-  0% {
-    width: 0;
-    height: 160px;
-    opacity: 0;
-  }
-
-  65% {
-    min-width: 720px;
-    width: 720px;
-    height: 160px;
-    opacity: 0;
-  }
-
-  66% {
-    opacity: 1;
-  }
-
-  72% {
-    width: 720px;
-    height: 160px;
-  }
-
-  to {
-    min-width: 720px;
-    width: 100vw;
-    height: 100vh;
-  }
-}
-
-/* Header animation */
-.header {
-  animation: startHeader 2.5s;
-}
-
-@keyframes startHeader {
-  0% {
-    transform: translateY(-105%);
-  }
-
-  82% {
-    transform: translateY(-105%);
-  }
-
-  to {
-    transform: translateY(0);
-  }
-}
-
-/*  */
 
 @layer base {
   *,

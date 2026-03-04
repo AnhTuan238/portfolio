@@ -1,10 +1,10 @@
-import { useScroll } from "@/features/home/hooks/useScroll";
+import { useScroll } from "../../hooks/useScroll";
 
 export const Hero = () => {
   const { isScroll } = useScroll();
 
   return (
-    <section id="mvArea">
+    <section className="relative lg:before:content-[''] lg:before:bg-primary lg:before:z-100 lg:before:absolute lg:before:text-right lg:before:top-1/2 lg:before:left-1/2 lg:before:-translate-x-1/2 lg:before:-translate-y-1/2 lg:before:opacity-0 lg:before:w-180 lg:before:h-40 lg:before:animate-box lg:after:content-['HELLO'] lg:after:text-white lg:after:text-5xl lg:after:font-bold lg:after:flex lg:after:items-center lg:after:justify-end lg:after:pr-5 lg:after:z-101 lg:after:animate-text-in-box lg:after:absolute lg:after:top-1/2 lg:after:left-1/2 lg:after:-translate-x-1/2 lg:after:-translate-y-1/2 lg:after:opacity-0 lg:after:w-180 lg:after:h-40">
       <div
         className={`${
           isScroll ? "opacity-100" : "opacity-0"
@@ -20,7 +20,7 @@ export const Hero = () => {
         </p>
       </div>
 
-      <section className={`z-2 relative w-full h-125 lg:h-screen`}>
+      <div className="z-2 relative  h-125 lg:h-screen">
         <div
           className={`${
             isScroll ? "opacity-0" : "opacity-100"
@@ -34,24 +34,24 @@ export const Hero = () => {
 
         <div
           className={`${
-            isScroll ? "h-30 lg:w-4/5 lg:h-90" : " w-full h-full"
-          } hero relative  top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-300 overflow-hidden`}
+            isScroll ? "h-30 lg:w-4/5 lg:h-90" : "w-full h-full"
+          } lg:ease-in-out lg:animate-hero-container relative  top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-300 overflow-hidden`}
         >
-          <div className="absolute inset-0 bg-black/60 z-10"></div>
+          <div className="absolute inset-0 bg-black/60 z-3"></div>
 
           <img
-            src="/banner-1.jpg"
+            src="/banner-1.webp"
             alt="banner"
             className="absolute top-0 size-full animate-fade object-top"
           />
 
           <img
-            src="/banner-2.jpg"
+            src="/banner-2.webp"
             alt="banner"
             className="absolute top-0 size-full animate-fade [animation-delay:5s] object-top"
           />
         </div>
-      </section>
+      </div>
     </section>
   );
 };

@@ -62,7 +62,7 @@ export const Header = () => {
     <header
       className={`${
         isScroll ? "hidden" : ""
-      }  header fixed top-0 w-full border-gray-1 bg-transparent lg:bg-white lg:block lg:border-b z-4`}
+      }  lg:animate-header fixed top-0 w-full border-gray-1 bg-transparent lg:bg-white lg:block lg:border-b z-4`}
     >
       <div className="flex justify-between items-center px-6 py-4.5 lg:px-8">
         <h1 className=" text-xl font-bold text-white lg:text-black lg:text-2xl">
