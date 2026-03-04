@@ -71,7 +71,6 @@ export const Nav = ({ className }: { className?: string }) => {
       className={`flex items-center justify-center text-sm font-bold lg:text-base  ${className}`}
     >
       <ul className="relative flex items-center gap-5 lg:gap-20">
-        <NavLink to="/admin/dashboard"> Admin</NavLink>
         {links.map((item, index) => (
           <li key={item.label} className="py-7 lg:py-2">
             <a
