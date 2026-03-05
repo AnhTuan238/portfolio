@@ -7,7 +7,7 @@ const links = [
   { label: "experience" },
 ];
 
-export const Nav = ({ className }: { className?: string }) => {
+export const NavSection = ({ className }: { className?: string }) => {
   const { t } = useTranslation();
 
   const navItemRefs = useRef<(HTMLAnchorElement | null)[]>([]);

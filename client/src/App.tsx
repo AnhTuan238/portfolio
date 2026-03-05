@@ -1,7 +1,6 @@
 import "./i18n";
 import { createBrowserRouter, RouterProvider, Navigate } from "react-router";
 import { Toaster } from "@/shared/ui/sonner";
-import { useState } from "react";
 
 import {
   CreateProjectPage,
@@ -39,10 +38,8 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  // const [showIntro, setShowIntro] = useState(true);
   return (
     <>
-      {/* {showIntro && <IntroSection onFinish={() => setShowIntro(false)} />} */}
       <RouterProvider router={router} />
       <Toaster position="top-right" expand={true} richColors theme="light" />
     </>

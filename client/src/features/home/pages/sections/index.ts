@@ -5,4 +5,3 @@ export * from "./ExperienceSection";
 export * from "./ProjectSection";
 export * from "./FooterSection";
 export * from "./NavSection";
-export * from "./IntroSection";

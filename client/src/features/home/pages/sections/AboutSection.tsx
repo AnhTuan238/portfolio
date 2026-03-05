@@ -1,4 +1,4 @@
-export const About = () => {
+export const AboutSection = () => {
   return (
     <section
       id="about"

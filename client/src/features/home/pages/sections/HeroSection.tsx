@@ -1,6 +1,6 @@
 import { useScroll } from "../../hooks/useScroll";
 
-export const Hero = () => {
+export const HeroSection = () => {
   const { isScroll } = useScroll();
 
   return (
