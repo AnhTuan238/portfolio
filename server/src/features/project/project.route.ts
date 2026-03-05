@@ -27,35 +27,35 @@ router.get(
 
 router.post(
   "/",
-  // authenticate,
+  authenticate,
   validate({ body: ProjectSchema }),
   projectController.createProject,
 );
 
 router.put(
   "/:id",
-  // authenticate,
+  authenticate,
   validate({ params: ProjectParamsSchema, body: ProjectSchema }),
   projectController.updateProject,
 );
 
 router.delete(
   "/:id/force-delete",
-  // authenticate,
+  authenticate,
   validate({ params: ProjectParamsSchema }),
   projectController.deleteProject,
 );
 
 router.delete(
   "/:id",
-  // authenticate,
+  authenticate,
   validate({ params: ProjectParamsSchema }),
   projectController.softDeleteProject,
 );
 
 router.patch(
   "/:id/restore",
-  // authenticate,
+  authenticate,
   validate({ params: ProjectParamsSchema }),
   projectController.restoreProject,
 );
