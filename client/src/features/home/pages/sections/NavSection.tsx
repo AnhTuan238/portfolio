@@ -1,6 +1,5 @@
 import { useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
-import { NavLink } from "react-router";
 
 const links = [
   { label: "about" },

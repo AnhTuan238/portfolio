@@ -1,6 +1,5 @@
 import { redirect } from "react-router";
 import { AxiosError } from "axios";
-import { toast } from "sonner";
 
 import { getUser } from "@/features/admin";
 import { QUERY_KEY } from "@/shared";
