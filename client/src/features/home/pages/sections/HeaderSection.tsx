@@ -50,7 +50,8 @@ const LocaleSwitcher = () => {
                   } cursor-pointer uppercase`}
                   onClick={() => {
                     setIsOpen(false);
-                    i18n.changeLanguage(language.code);
+                    localStorage.setItem("i18nextLng", language.code);
+                    window.location.replace("/");
                   }}
                 >
                   {language.code}

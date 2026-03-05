@@ -7,7 +7,7 @@ const links = [
   { label: "experience" },
 ];
 
-export const NavSection = ({ className }: { className?: string }) => {
+export const NavSection = ({ className = "" }: { className?: string }) => {
   const { t } = useTranslation();
 
   const navItemRefs = useRef<(HTMLAnchorElement | null)[]>([]);
@@ -67,7 +67,7 @@ export const NavSection = ({ className }: { className?: string }) => {
 
   return (
     <nav
-      className={`flex items-center justify-center text-sm font-bold lg:text-base  ${className}`}
+      className={`flex items-center justify-center text-sm font-bold lg:text-base ${className}`}
     >
       <ul className="relative flex items-center gap-5 lg:gap-20">
         {links.map((item, index) => (

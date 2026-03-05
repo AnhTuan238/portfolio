@@ -1,1 +1,35 @@
-{ "projects": "Dự án", "experience": "Kinh nghiệm", "about": "Về tôi" }
+{
+  "projects": "Dự án",
+  "experience": "Kinh nghiệm",
+  "about": "Về tôi",
+  "aboutMe": {
+    "introduction": "Tôi sinh năm 2003 và đã tốt nghiệp ngành <strong>Công nghệ Kỹ thuật Máy tính</strong> của <strong>Trường Đại học Công nghệ Kỹ thuật Thành phố Hồ Chí Minh (HCMUTE)</strong>. Tôi có niềm đam mê lớn với phát triển web và liên tục học hỏi các công nghệ mới để xây dựng các trang web chất lượng cao và hữu ích.",
+    "skills": "Tôi có kinh nghiệm phát triển web hiện đại sử dụng <strong>ReactJS</strong>, <strong>NextJS</strong>, và <strong>NodeJS</strong>, và rất quan tâm đến <strong>SEO</strong>. Tôi cũng có kỹ năng sử dụng <strong>Tiếng Anh</strong> ở mức tương đối, với điểm <strong>TOEIC</strong> là <strong>760/990</strong>."
+  },
+  "My skills": "Kỹ năng",
+  "projectSection": {
+    "description": "Các dự án thể hiện kỹ năng của tôi,<br/>nơi sáng tạo kết hợp với giải quyết vấn đề để xây dựng các ứng dụng thực tiễn."
+  },
+  "experienceSection": {
+    "description": "Được hình thành từ kinh nghiệm thực tiễn, <br />tôi biến những ý tưởng thành giải pháp thực tế thông qua việc học hỏi và hợp tác liên tục.",
+    "hcmute": {
+      "company": "Ho Chi Minh City University of Technology and Education (HCMUTE)",
+      "role": "Sinh viên ngành Kỹ thuật Máy tính",
+      "time": "2021 - 2025",
+      "description": "Học các kiến thức nền tảng về phát triển web, hệ thống nhúng và trí tuệ nhân tạo (AI). Áp dụng kỹ năng thông qua các dự án thực tế, tập trung xây dựng hệ thống thông minh và ứng dụng thân thiện với người dùng."
+    },
+    "adsagency": {
+      "company": "AdsAgency Vietnam Co., Ltd.",
+      "role": "Thực tập sinh Kỹ sư Phần mềm",
+      "time": "Aug 2024 - Jan 2025",
+      "description": "Tham gia phát triển nhiều loại website khác nhau, bao gồm nền tảng thương mại điện tử và trang tin tức sử dụng WordPress. Làm việc chặt chẽ với đội backend để tích hợp API và cải thiện hiệu năng website."
+    }
+  },
+  "designer": "Thiết kế bởi",
+  "heroSection": {
+    "title": "Tôi là Tuấn",
+    "subtitle": "Chào mừng đến với trang web của tôi",
+    "description": "Viết code thì đơn giản,   <br /> nhưng viết code đơn giản thì khó vô cùng"
+  },
+  "HO ANH TUAN": "HỒ ANH TUẤN"
+}

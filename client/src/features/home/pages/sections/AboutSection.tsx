@@ -1,4 +1,7 @@
+import { useTranslation, Trans } from "react-i18next";
+
 export const AboutSection = () => {
+  const { t } = useTranslation();
   return (
     <section
       id="about"
@@ -8,16 +11,14 @@ export const AboutSection = () => {
 
       <div className="flex flex-col-reverse items-center pb-20 lg:py-38 lg:flex-row">
         <div className="w-full lg:w-1/2 pl-12 pt-7 before:hidden before:absolute before:size-2.5 before:top-0 before:left-5 before:-translate-y-1/2 before:-translate-x-1/2 before:border before:border-gray-400 before:rounded-full lg:pt-0 lg:pl-0 lg:pr-28 lg:before:left-[50%]  lg:before:inline-block">
-          <h3 className="text-2xl font-semibold lg:text-4xl">HO ANH TUAN</h3>
+          <h3 className="text-2xl font-semibold lg:text-4xl">
+            {t("HO ANH TUAN")}
+          </h3>
           <p className="mt-2 text-gray-2 text-sm/[1.7] text-justify lg:text-lg">
-            I was born in 2003 and graduated in{" "}
-            <strong className="text-primary">Computer Engineering</strong> from{" "}
-            <strong className="text-primary">
-              Ho Chi Minh City University of Technology and Education (HCMUTE)
-            </strong>
-            (HCMUTE). I have a great passion for web development and
-            continuously learn new technologies to build high-quality and useful
-            digital products.
+            <Trans
+              i18nKey="aboutMe.introduction"
+              components={{ strong: <strong className="text-primary" /> }}
+            />
           </p>
         </div>
 
@@ -36,18 +37,14 @@ export const AboutSection = () => {
 
       <div className="relative flex flex-col-reverse items-center pt-0 lg:py-38 lg:flex-row-reverse">
         <div className="w-full lg:w-1/2 pl-12 pt-7 before:hidden before:absolute before:size-2.5 before:top-0 before:left-5 before:-translate-y-1/2 before:-translate-x-1/2 before:border before:border-gray-400 before:rounded-full  lg:pl-28 lg:before:left-[50%]  lg:before:inline-block">
-          {" "}
-          <h3 className="text-2xl font-semibold lg:text-4xl">MY SKILLS</h3>
-          <p className="mt-2 text-gray-2 text-sm/[1.7] text-justify lg:text-lg">
-            I am experienced in modern web development using{" "}
-            <strong className="text-primary">ReactJS</strong>,{" "}
-            <strong className="text-primary">NextJS</strong>, and{" "}
-            <strong className="text-primary">NodeJS</strong>, and have a strong
-            interest in{" "}
-            <strong className="text-primary">SEO optimization</strong>. I also
-            have solid English communication skills, demonstrated by a{" "}
-            <strong className="text-primary">TOEIC</strong>
-            score of <strong className="text-primary">760/990</strong>.
+          <h3 className="text-2xl font-semibold uppercase lg:text-4xl">
+            {t("My skills")}
+          </h3>
+          <p className="mt-2 text-gray-2 text-justify text-sm/[1.7] lg:text-lg">
+            <Trans
+              i18nKey="aboutMe.skills"
+              components={{ strong: <strong className="text-primary" /> }}
+            />
           </p>
         </div>
         <div className="w-full lg:w-1/2 z-1">

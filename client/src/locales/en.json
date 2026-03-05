@@ -1,1 +1,35 @@
-{ "projects": "Projects", "experience": "Experience", "about": "About" }
+{
+  "projects": "Projects",
+  "experience": "Experience",
+  "about": "About",
+  "aboutMe": {
+    "introduction": "I was born in 2003 and graduated in <strong>Computer Engineering</strong> from <strong>Ho Chi Minh City University of Technology and Education (HCMUTE)</strong>. I have a great passion for web development and continuously learn new technologies to build high-quality and useful digital products.",
+    "skills": "I am experienced in modern web development using <strong>ReactJS</strong>, <strong>NextJS</strong>, and <strong>NodeJS</strong>, and have a strong interest in <strong>SEO</strong> optimization. I also have solid English communication skills, demonstrated by a <strong>TOEIC</strong> score of <strong>760/990</strong>."
+  },
+  "My skills": "My skills",
+  "projectSection": {
+    "description": "A collection of projects that showcase my skills,<br/>where creativity meets problem-solving to build impactful and practical applications"
+  },
+  "experienceSection": {
+    "description": " Shaped by hands-on experiences, <br />I transform ideas into real-world solutions through continuous learning and collaboration",
+    "hcmute": {
+      "company": "Ho Chi Minh City University of Technology and Education (HCMUTE)",
+      "role": "Computer Engineering student",
+      "time": "2021 - 2025",
+      "description": "Learned foundational knowledge in web development, embedded systems, and artificial intelligence (AI). Applied skills through practical projects, focusing on building smart systems and user-friendly applications."
+    },
+    "adsagency": {
+      "company": "AdsAgency Vietnam Co., Ltd.",
+      "role": "Software Engineer Intern",
+      "time": "Aug 2024 - Jan 2025",
+      "description": "Participated in the development of diverse websites, including e-commerce platforms and news portals on WordPress. Worked closely with the backend team to integrate APIs and improve website performance."
+    },
+    "designer": "Made & design by"
+  },
+  "heroSection": {
+    "title": "I'm TUAN",
+    "subtitle": "Welcome to my portfolio",
+    "description": "Writing code is simple,   <br /> but writing simple code is incredibly hard"
+  },
+  "HO ANH TUAN": "HO ANH TUAN"
+}
