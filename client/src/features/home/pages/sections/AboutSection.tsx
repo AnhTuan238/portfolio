@@ -22,7 +22,15 @@ export const About = () => {
         </div>
 
         <div className="w-full lg:w-1/2 z-1">
-          <img src="/about.gif" alt="About me" className="w-full aspect-11/7" />
+          <video
+            src="/about.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="none"
+            className="w-full aspect-11/7"
+          />
         </div>
       </div>
 
@@ -43,7 +51,12 @@ export const About = () => {
           </p>
         </div>
         <div className="w-full lg:w-1/2 z-1">
-          <img src="/skills.png" alt="Skills" className="w-full aspect-11/7" />
+          <img
+            src="/skills.webp"
+            alt="Skills"
+            loading="lazy"
+            className="w-full aspect-11/7"
+          />
         </div>
       </div>
     </section>
