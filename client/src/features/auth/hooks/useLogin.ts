@@ -2,16 +2,15 @@ import { useMutation } from "@tanstack/react-query";
 
 import { login } from "../api/auth.api";
 
-import { queryClient } from "@/shared/config";
-import { QUERY_KEY } from "@/shared";
+import { QUERY_KEY, queryClient } from "@/shared";
 
 export const useLogin = () => {
-  const { mutateAsync: signIn, isPending } = useMutation({
+  const { mutateAsync, isPending } = useMutation({
     mutationFn: login,
     onSuccess: (user) => {
       queryClient.setQueryData([QUERY_KEY.ME], user);
     },
   });
 
-  return { signIn, isPending };
+  return { signIn: mutateAsync, isPending };
 };
