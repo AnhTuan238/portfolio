@@ -1,6 +1,7 @@
 import { axiosInstance } from "@/shared/config";
 
-import type { LoginFormValues, LoginResponse } from "../types";
+import type { LoginFormValues } from "../types";
+import type { User } from "@/features/admin";
 
 export const AUTH_ENDPOINTS = {
   LOGIN: "/api/auth/login",
@@ -8,11 +9,8 @@ export const AUTH_ENDPOINTS = {
   REFRESH: "/api/auth/refresh",
 };
 
-export const login = async (value: LoginFormValues): Promise<LoginResponse> => {
-  const { data } = await axiosInstance.post<LoginResponse>(
-    AUTH_ENDPOINTS.LOGIN,
-    value,
-  );
+export const login = async (value: LoginFormValues): Promise<User> => {
+  const { data } = await axiosInstance.post<User>(AUTH_ENDPOINTS.LOGIN, value);
 
   return data;
 };
