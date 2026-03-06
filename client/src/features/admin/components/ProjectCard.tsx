@@ -17,15 +17,15 @@ export const ProjectCard = ({ project, currentPage }: ProjectCardProps) => {
 
   return (
     <article className="rounded-md shadow-md overflow-hidden flex flex-col bg-white h-125">
-      <img src={imageUrl} alt={title} loading="lazy" className="w-full h-1/2" />
+      <img src={imageUrl} alt={title} loading="lazy" className="w-full h-2/5" />
 
       <div className="flex-1 space-y-4 p-4 ">
         {/* Project Name */}
         <h3 className="text-lg font-semibold">{title}</h3>
 
         {/* Technologies */}
-        <ul className="flex gap-2 flex-wrap max-h-16">
-          {techList.slice(0, 3).map((tech) => {
+        <ul className="flex gap-2 flex-wrap max-h-16 overflow-hidden">
+          {techList.slice(0, 4).map((tech) => {
             return (
               <li
                 key={tech}
@@ -35,9 +35,9 @@ export const ProjectCard = ({ project, currentPage }: ProjectCardProps) => {
               </li>
             );
           })}
-          {techList.length > 3 && (
+          {techList.length > 4 && (
             <li className="py-1 text-sm px-2 rounded-md bg-primary flex gap-1 text-white font-medium">
-              +{techList.length - 3}
+              +{techList.length - 4}
             </li>
           )}
         </ul>
