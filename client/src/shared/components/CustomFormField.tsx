@@ -31,15 +31,15 @@ export const CustomField = <T extends FieldValues>({
       control={form.control}
       name={name}
       render={({ field }) => {
-        // 👉 CASE FILE INPUT
         if (isFile) {
           return (
             <FormItem>
-              <FormLabel>{label}</FormLabel>
+              <FormLabel className="text-gray-6 font-normal">{label}</FormLabel>
               <FormControl>
                 <Input
                   type="file"
                   accept="image/*"
+                  className="border-none w-fit shadow-none px-0 file:mr-4 file:px-3 file:py-1 file:border file:border-gray-300 file:rounded file:bg-gray-100 file:text-sm file:cursor-pointer cursor-pointer"
                   onChange={(e) => {
                     const file = e.target.files?.[0];
                     field.onChange(file);
@@ -51,7 +51,6 @@ export const CustomField = <T extends FieldValues>({
           );
         }
 
-        // 👉 CASE NORMAL INPUT
         return (
           <FormItem className="relative h-9">
             <FormControl>
