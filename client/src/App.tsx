@@ -16,6 +16,7 @@ import {
 import { setupAxiosInterceptor } from "@/shared/config";
 
 import "./App.css";
+import { useEffect } from "react";
 
 setupAxiosInterceptor();
 
@@ -38,6 +39,13 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
+  useEffect(() => {
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
+    }
+
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <RouterProvider router={router} />
