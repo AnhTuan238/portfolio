@@ -37,7 +37,10 @@ export const ActionConfirmDialog = ({
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
-          <AlertDialogCancel className="action-confirm-button bg-black">
+          <AlertDialogCancel
+            disabled={isProcessing}
+            className="action-confirm-button bg-black"
+          >
             Cancel
           </AlertDialogCancel>
           <AlertDialogAction
