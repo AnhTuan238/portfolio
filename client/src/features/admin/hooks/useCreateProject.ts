@@ -8,7 +8,7 @@ import { queryClient } from "@/shared/config";
 import { QUERY_KEY } from "@/shared";
 
 export const useCreateProject = () => {
-  const { mutateAsync, isPending: isCreating } = useMutation({
+  const { mutateAsync, isPending } = useMutation({
     mutationFn: async (values: CreateProjectForm) => {
       const { image, ...rest } = values;
       const imageUrl = image ? await uploadImageToCloudinary(image) : "";
@@ -25,5 +25,5 @@ export const useCreateProject = () => {
     },
   });
 
-  return { handleCreateProject: mutateAsync, isCreating };
+  return { handleCreateProject: mutateAsync, isCreating: isPending };
 };
