@@ -5,13 +5,11 @@ import { ErrorState } from "@/shared";
 import { useGetProjects, useSmartLoading } from "../hooks";
 
 export const TrashPage = () => {
-  const { projects, isLoading, isError, refetch } = useGetProjects({
+  const { projects, isLoadingProjects, isError, refetch } = useGetProjects({
     isDeleted: true,
   });
 
-  const show = useSmartLoading(isLoading, 400);
-
-  if (show) return <ProjectSkeleton />;
+  const show = useSmartLoading(isLoadingProjects, 400);
 
   if (isError)
     return (
@@ -25,7 +23,10 @@ export const TrashPage = () => {
   return (
     <>
       <h1 className="text-3xl font-medium mb-10 ">TRASH</h1>
-      {projects.length === 0 ? (
+
+      {show ? (
+        <ProjectSkeleton />
+      ) : projects.length === 0 ? (
         <p>No projects yet.</p>
       ) : (
         <ProjectList projects={projects} currentPage="trash" />

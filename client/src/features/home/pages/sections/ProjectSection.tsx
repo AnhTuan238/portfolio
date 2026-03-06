@@ -1,8 +1,8 @@
-import { useGetProjects, ProjectList } from "@/features";
+import { useGetProjects, ProjectList, ProjectSkeleton } from "@/features";
 import { Trans, useTranslation } from "react-i18next";
 
 export const ProjectSection = () => {
-  const { projects } = useGetProjects({ isDeleted: false });
+  const { projects, isLoadingProjects } = useGetProjects({ isDeleted: false });
   const { t } = useTranslation();
 
   return (
@@ -16,8 +16,11 @@ export const ProjectSection = () => {
             <Trans i18nKey="projectSection.description" />
           </p>
         </div>
-
-        <ProjectList projects={projects} currentPage="home" />
+        {isLoadingProjects ? (
+          <ProjectSkeleton />
+        ) : (
+          <ProjectList projects={projects} currentPage="home" />
+        )}
       </div>
     </section>
   );
