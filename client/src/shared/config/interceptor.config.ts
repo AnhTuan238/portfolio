@@ -1,3 +1,6 @@
+import axios from "axios";
+import type { AxiosRequestConfig } from "axios";
+
 import { UNAUTHORIZED, AUTH_ENDPOINTS } from "@/features";
 import { axiosInstance } from "./axios.config";
 
@@ -6,13 +9,17 @@ interface FailedQueueItem {
   reject: (reason: any) => void;
 }
 
+interface CustomAxiosRequestConfig extends AxiosRequestConfig {
+  _retry?: boolean;
+}
+
 let isRefreshing = false;
 
 let failedQueue: FailedQueueItem[] = [];
 
-const processQueue = (error?: any) => {
+const processQueue = (refreshError?: unknown) => {
   failedQueue.forEach((request) => {
-    error ? request.reject(error) : request.resolve(true);
+    refreshError ? request.reject(refreshError) : request.resolve(true);
   });
 
   failedQueue = [];
@@ -22,10 +29,11 @@ export const setupAxiosInterceptor = (onLogout?: () => void) => {
   axiosInstance.interceptors.response.use(
     (response) => response,
 
-    async (error) => {
-      if (!error.response) return Promise.reject(error);
+    async (error: unknown) => {
+      if (!axios.isAxiosError(error)) return Promise.reject(error);
+      if (!error.response || !error.config) return Promise.reject(error);
 
-      const originalRequest = error.config;
+      const originalRequest = error.config as CustomAxiosRequestConfig;
 
       if (
         error.response.status === UNAUTHORIZED &&
