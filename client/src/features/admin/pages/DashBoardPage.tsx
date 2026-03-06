@@ -9,8 +9,6 @@ export const DashboardPage = () => {
   const { projects, isLoading, isError, refetch } = useGetProjects();
   const show = useSmartLoading(isLoading, 400);
 
-  if (show) return <ProjectSkeleton />;
-
   if (isError)
     return (
       <ErrorState
@@ -23,7 +21,9 @@ export const DashboardPage = () => {
   return (
     <>
       <h1 className="text-3xl font-medium mb-10 ">DASHBOARD</h1>
-      {projects.length === 0 ? (
+      {show ? (
+        <ProjectSkeleton />
+      ) : projects.length === 0 ? (
         <p>No projects yet.</p>
       ) : (
         <ProjectList projects={projects} currentPage="dashboard" />
