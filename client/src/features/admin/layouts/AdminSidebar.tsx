@@ -1,5 +1,4 @@
-import { useMutation } from "@tanstack/react-query";
-import { NavLink, useNavigate } from "react-router";
+import { NavLink } from "react-router";
 import { MdOutlineDashboard } from "react-icons/md";
 import { IoPlayBackOutline } from "react-icons/io5";
 import { AiOutlineFolderAdd } from "react-icons/ai";
@@ -18,9 +17,7 @@ import {
 
 import { useRouteLoaderData } from "react-router";
 
-import { logout } from "@/features";
-import { queryClient } from "@/shared/config";
-import { QUERY_KEY } from "@/shared";
+import { useLogout } from "@/features/auth";
 
 const items = [
   {
@@ -53,15 +50,8 @@ const items = [
 
 export const AdminSidebar = () => {
   const user = useRouteLoaderData("admin");
-  const navigate = useNavigate();
 
-  const { mutate: signOut } = useMutation({
-    mutationFn: logout,
-    onSettled: () => {
-      queryClient.removeQueries({ queryKey: [QUERY_KEY.ME] });
-      navigate("/", { replace: true });
-    },
-  });
+  const { signOut } = useLogout();
 
   return (
     <SidebarContainer className="border-r border-gray-200">
