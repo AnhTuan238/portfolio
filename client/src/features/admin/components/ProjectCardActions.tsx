@@ -1,8 +1,8 @@
 import { toast } from "sonner";
 
-import { useForceDelete } from "../hooks/useForceDeleteProject";
+import { useForceDeleteProject } from "../hooks/useForceDeleteProject";
 import { useRestoreProject } from "../hooks/useRestoreProject";
-import { useSoftDelete } from "../hooks/useSoftDeleteProject";
+import { useSoftDeleteProject } from "../hooks/useSoftDeleteProject";
 import { ActionConfirmDialog } from "./ActionConfirmDialog";
 import { ProjectActionButton } from "./ProjectActionButton";
 
@@ -11,7 +11,7 @@ import { logError } from "@/shared";
 import type { ProjectCardActionsProps } from "../types";
 
 const DashboardProjectActions = ({ projectId }: { projectId: string }) => {
-  const { softDelete, isSoftDeleting } = useSoftDelete({
+  const { softDelete, isSoftDeleting } = useSoftDeleteProject({
     onSuccess: () => toast.success("Move project to trash successfully"),
     onError: (error: unknown) => {
       logError(error);
@@ -43,7 +43,7 @@ const TrashProjectActions = ({ projectId }: { projectId: string }) => {
       toast.error("Restore project failed");
     },
   });
-  const { forceDeleteProject, isForceDeleting } = useForceDelete({
+  const { forceDeleteProject, isForceDeleting } = useForceDeleteProject({
     onSuccess: () => toast.success("Delete project successfully"),
     onError: (error: Error) => {
       logError(error);

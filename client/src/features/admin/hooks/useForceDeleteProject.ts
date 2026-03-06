@@ -7,7 +7,7 @@ import { QUERY_KEY } from "@/shared";
 
 import type { Project, ProjectActionCallbacks } from "../types";
 
-export const useForceDelete = (options?: ProjectActionCallbacks) => {
+export const useForceDeleteProject = (options?: ProjectActionCallbacks) => {
   const { mutateAsync, isPending, ...rest } = useMutation({
     mutationFn: deleteProject,
     onSuccess: (deletedProject) => {

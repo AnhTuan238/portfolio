@@ -1,4 +1,4 @@
-import { axiosInstance } from "@/shared/config";
+import { axiosInstance } from "@/shared";
 
 import type {
   CreateProjectPayload,
@@ -40,7 +40,7 @@ export const getProjects = async (
   return data;
 };
 
-export const softDelete = async (id: string): Promise<Project> => {
+export const softDeleteProject = async (id: string): Promise<Project> => {
   const { data } = await axiosInstance.delete<Project>(
     `${ADMIN_ENDPOINTS.PROJECTS}/${id}`,
   );

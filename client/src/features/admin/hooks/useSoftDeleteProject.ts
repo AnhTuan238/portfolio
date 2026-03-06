@@ -1,15 +1,15 @@
 import { useMutation } from "@tanstack/react-query";
 
-import { softDelete } from "../api";
+import { softDeleteProject } from "../api";
 
 import { queryClient } from "@/shared/config";
 import { QUERY_KEY } from "@/shared";
 
 import type { Project, ProjectActionCallbacks } from "../types";
 
-export const useSoftDelete = (options?: ProjectActionCallbacks) => {
+export const useSoftDeleteProject = (options?: ProjectActionCallbacks) => {
   const { mutateAsync, isPending, ...rest } = useMutation({
-    mutationFn: softDelete,
+    mutationFn: softDeleteProject,
     onSuccess: (deletedProject, id) => {
       // Update cache in Dashboard Page
       queryClient.setQueryData<Project[]>(
