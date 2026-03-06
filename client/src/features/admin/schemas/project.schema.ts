@@ -8,6 +8,7 @@ const optionalUrl = z
 export const createProjectFormSchema = z.object({
   title: z.string().min(1, "Title is required"),
   description: z.string().optional(),
+  technology: z.string().optional(),
   image: z.instanceof(File).optional(),
   liveUrl: optionalUrl,
   githubUrl: optionalUrl,

@@ -12,14 +12,15 @@ import {
 
 import type { ActionConfirmDialogProps } from "../types";
 
-export const ActionConfirmDialog = ({
-  labelTrigger,
-  titleModal,
-  descriptionModal,
-  labelAction,
-  isProcessing,
-  action,
-}: ActionConfirmDialogProps) => {
+export const ActionConfirmDialog = (props: ActionConfirmDialogProps) => {
+  const {
+    labelTrigger,
+    titleModal,
+    descriptionModal,
+    labelAction,
+    isProcessing,
+    action,
+  } = props;
   return (
     <AlertDialog>
       <AlertDialogTrigger asChild>

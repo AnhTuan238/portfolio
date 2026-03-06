@@ -19,9 +19,10 @@ export const CreateProjectPage = () => {
     defaultValues: {
       title: "",
       description: "",
-      image: undefined,
+      technology: "",
       liveUrl: "",
       githubUrl: "",
+      image: undefined,
     },
   });
 
@@ -31,9 +32,10 @@ export const CreateProjectPage = () => {
       form.reset({
         title: "",
         description: "",
-        image: undefined,
+        technology: "",
         liveUrl: "",
         githubUrl: "",
+        image: undefined,
       });
       toast.success("Project created successfully");
     } catch (err: unknown) {
@@ -55,9 +57,10 @@ export const CreateProjectPage = () => {
           >
             <CustomField form={form} name="title" label="Project Title" />
             <CustomField form={form} name="description" label="Description" />
-            <CustomField form={form} name="image" label="Image" />
+            <CustomField form={form} name="technology" label="Technology" />
             <CustomField form={form} name="liveUrl" label="Live URL" />
             <CustomField form={form} name="githubUrl" label="GitHub URL" />
+            <CustomField form={form} name="image" label="Image" />
 
             <Button
               disabled={isCreating}

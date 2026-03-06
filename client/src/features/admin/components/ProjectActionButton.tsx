@@ -1,7 +1,7 @@
 import type { ProjectActionButtonProps } from "../types";
 
 export const ProjectActionButton = (props: ProjectActionButtonProps) => {
-  const { label, disabled, variant } = props;
+  const { label, disabled, variant = "" } = props;
 
   if ("href" in props) {
     return (
@@ -21,6 +21,7 @@ export const ProjectActionButton = (props: ProjectActionButtonProps) => {
       disabled={disabled}
       onClick={props.action}
       className={`project-card-button ${variant}`}
+      type="button"
     >
       {label}
     </button>
