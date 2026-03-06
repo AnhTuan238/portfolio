@@ -19,7 +19,7 @@ export const CreateProjectPage = () => {
     defaultValues: {
       title: "",
       description: "",
-      technology: "",
+      technologies: "",
       liveUrl: "",
       githubUrl: "",
       image: undefined,
@@ -32,7 +32,7 @@ export const CreateProjectPage = () => {
       form.reset({
         title: "",
         description: "",
-        technology: "",
+        technologies: "",
         liveUrl: "",
         githubUrl: "",
         image: undefined,
@@ -55,9 +55,9 @@ export const CreateProjectPage = () => {
             noValidate
             className="space-y-8"
           >
-            <CustomField form={form} name="title" label="Project Title" />
+            <CustomField form={form} name="title" label="Title" />
             <CustomField form={form} name="description" label="Description" />
-            <CustomField form={form} name="technology" label="Technology" />
+            <CustomField form={form} name="technologies" label="Technologies" />
             <CustomField form={form} name="liveUrl" label="Live URL" />
             <CustomField form={form} name="githubUrl" label="GitHub URL" />
             <CustomField form={form} name="image" label="Image" />

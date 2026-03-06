@@ -3,7 +3,17 @@ import { ProjectCardActions } from "./ProjectCardActions";
 import type { ProjectCardProps } from "../types";
 
 export const ProjectCard = ({ project, currentPage }: ProjectCardProps) => {
-  const { _id, title, description, imageUrl, liveUrl, githubUrl } = project;
+  const {
+    _id,
+    title,
+    description,
+    technologies = "",
+    imageUrl,
+    liveUrl,
+    githubUrl,
+  } = project;
+
+  const techList = technologies.split(/\s*,\s*/).filter(Boolean);
 
   return (
     <article className="rounded-md shadow-md overflow-hidden flex flex-col bg-white h-125">
@@ -14,16 +24,22 @@ export const ProjectCard = ({ project, currentPage }: ProjectCardProps) => {
         <h3 className="text-lg font-semibold">{title}</h3>
 
         {/* Technologies */}
-        <ul className="flex gap-2 flex-wrap max-h-16 overflow-hidden">
-          <li className="py-1 text-sm px-2 rounded-md bg-primary flex gap-1 text-white font-medium">
-            ReactJS
-          </li>
-          <li className="py-1 text-sm px-2 rounded-md bg-primary flex gap-1 text-white font-medium">
-            NextJS
-          </li>
-          <li className="py-1 text-sm px-2 rounded-md bg-primary flex gap-1 text-white font-medium">
-            NodeJS
-          </li>
+        <ul className="flex gap-2 flex-wrap max-h-16">
+          {techList.slice(0, 3).map((tech) => {
+            return (
+              <li
+                key={tech}
+                className="py-1 text-sm px-2 rounded-md bg-primary flex gap-1 text-white font-medium"
+              >
+                {tech}
+              </li>
+            );
+          })}
+          {techList.length > 3 && (
+            <li className="py-1 text-sm px-2 rounded-md bg-primary flex gap-1 text-white font-medium">
+              +{techList.length - 3}
+            </li>
+          )}
         </ul>
 
         {/* Description */}

@@ -20,12 +20,13 @@ export const projectController: ProjectController = {
   },
 
   createProject: async (_req, res) => {
-    const { title, description, imageUrl, liveUrl, githubUrl } =
+    const { title, description, technologies, imageUrl, liveUrl, githubUrl } =
       res.locals.body;
 
     const project = await projectService.create({
       title,
       description,
+      technologies,
       imageUrl,
       liveUrl,
       githubUrl,

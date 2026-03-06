@@ -10,6 +10,7 @@ export const ProjectSchema = z
   .object({
     title: z.string().trim(),
     description: z.string().trim().optional(),
+    technologies: z.string().trim().optional(),
     imageUrl: optionalUrl,
     liveUrl: optionalUrl,
     githubUrl: optionalUrl,

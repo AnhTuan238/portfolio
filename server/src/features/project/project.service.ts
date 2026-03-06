@@ -3,7 +3,8 @@ import { NOT_FOUND } from "@/constants";
 import { Project } from "./project.type";
 import { appAssert } from "@/shared/utils";
 
-const FIELD_SELECT = "title description imageUrl liveUrl githubUrl";
+const FIELD_SELECT =
+  "title description technologies imageUrl liveUrl githubUrl";
 
 export const projectService = {
   getProjects: async (isDeleted?: boolean) => {
