@@ -40,13 +40,13 @@ export const CreateProjectPage = () => {
       toast.success("Project created successfully");
     } catch (err: unknown) {
       console.error(err);
-      toast.error("Upload failed");
+      toast.error("Failed to create project");
     }
   };
 
   return (
     <>
-      <h1 className="text-3xl font-medium mb-10 ">Add Project</h1>
+      <h1 className="text-3xl font-medium mb-10 ">Create Project</h1>
 
       <div className="p-8 rounded-md border border-gray-8 bg-white">
         <Form {...form}>
