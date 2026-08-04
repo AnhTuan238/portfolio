@@ -11,7 +11,7 @@ export const authenticate: RequestHandler = (req, _res, next) => {
   appAssert(
     payload,
     UNAUTHORIZED,
-    error === "JWT expired" ? "Token expired" : "Invalid token",
+    error === "jwt expired" ? "Token expired" : "Invalid token",
   );
 
   req.userId = payload.userId.toString();
