@@ -30,7 +30,6 @@ export const authService = {
     const session = await SessionModel.create({
       userId,
       userAgent,
-      expiresAt: sevenDaysFromNow(),
     });
 
     const sessionInfo: TokenPayload = {
