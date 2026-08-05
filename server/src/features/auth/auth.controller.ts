@@ -6,7 +6,7 @@ import { authService } from "./auth.service";
 export const authController: AuthController = {
   login: async (req, res) => {
     const { email, password } = req.body;
-    const userAgent = req.headers["user-agent"];
+    const userAgent = req.headers["user-agent"] || "Unknown device";
 
     const { safeUser, accessToken, refreshToken } = await authService.login({
       email,
