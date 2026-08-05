@@ -6,10 +6,10 @@ import {
   refreshTokenSignOptions,
   TokenPayload,
   verifyToken,
+  decodeToken,
   signToken,
   appAssert,
   AppError,
-  sevenDaysFromNow,
 } from "@/shared";
 
 export const authService = {
@@ -49,10 +49,8 @@ export const authService = {
 
   logout: async (refreshToken: string) => {
     try {
-      const { payload } = verifyToken<TokenPayload>(refreshToken, {
-        secret: refreshTokenSignOptions.secret,
-      });
-      if (payload) {
+      const payload = decodeToken(refreshToken);
+      if (payload && payload.sessionId) {
         await SessionModel.findByIdAndDelete(payload.sessionId);
       }
     } catch (err: any) {

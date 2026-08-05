@@ -46,3 +46,7 @@ export const verifyToken = <TPayload extends object = TokenPayload>(
     };
   }
 };
+
+export const decodeToken = <TPayload extends object = TokenPayload>(
+  token: string,
+) => jwt.decode(token) as TPayload | null;
